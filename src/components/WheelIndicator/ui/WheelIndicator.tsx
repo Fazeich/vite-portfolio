@@ -19,9 +19,10 @@ export const WheelIndicator: FC<IProps> = ({ pages }) => {
 
   return (
     <WheelIndicatorWrapper>
-      {pages.map((_, index) => {
+      {pages.map(({ id }, index) => {
         return (
           <StyledIndicator
+            key={id}
             isActive={index === currentPage}
             onClick={() => handleChangePage(index)}
           />

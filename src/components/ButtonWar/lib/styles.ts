@@ -33,14 +33,6 @@ export const TitleWrapper = styled.div`
   }
 `;
 
-export const StyledInfoIcon = styled(Info)`
-  cursor: pointer;
-
-  :hover {
-    color: #17a2b8;
-  }
-`;
-
 export const ButtonsWrapper = styled.div`
   display: grid;
 
@@ -63,4 +55,13 @@ export const ButtonsColumnsWrapper = styled.div`
   flex-wrap: wrap;
 
   gap: 10px;
+`;
+
+export const StyledTooltipWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  gap: 5px;
 `;

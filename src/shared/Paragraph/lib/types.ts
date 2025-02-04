@@ -1,1 +1,1 @@
-export type TParagraphTypes = "primary" | "secondary" | "accent";
+export type TParagraphTypes = "primary" | "secondary" | "accent" | "additional";

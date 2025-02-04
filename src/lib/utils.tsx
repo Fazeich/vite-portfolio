@@ -1,7 +1,8 @@
-import { ButtonWar } from "@/components/ButtonWar/ui/ButtonWar";
-import { Introduce } from "@/components/Introduce/ui/Introduce";
-import { TPage } from "@/components/PageWheel/lib/types";
 import Welcome from "@/components/Welcome";
+import Introduce from "@/components/Introduce";
+import ButtonWar from "@/components/ButtonWar";
+import WindowsClone from "@/components/WindowsClone";
+import { TPage } from "@/components/PageWheel/lib/types";
 import { uniqueId } from "lodash";
 
 export const getPages = () => {
@@ -17,9 +18,14 @@ export const getPages = () => {
       children: <Introduce />,
     },
     {
-      settings: { background: "#ededed" },
+      settings: { background: "#eeeeee" },
       id: uniqueId(),
       children: <ButtonWar />,
+    },
+    {
+      settings: { background: "#dddddd" },
+      id: uniqueId(),
+      children: <WindowsClone />,
     },
   ];
 

@@ -18,6 +18,8 @@ export const StyledParagraph = styled.p<{
         return "#969696";
       case "accent":
         return "#17a2b8";
+      case "additional":
+        return "#ffffff";
       default:
         return "#000000";
     }

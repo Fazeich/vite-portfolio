@@ -1,29 +1,18 @@
-import {
-  ButtonsColumnsWrapper,
-  ButtonsRowsWrapper,
-  ButtonsWrapper,
-  ButtonWarWrapper,
-  StyledInfoIcon,
-  TitleWrapper,
-} from "../lib/styles";
+import { ButtonsWrapper, ButtonWarWrapper } from "../lib/styles";
 import Button from "@/shared/Button";
 import { useUnit } from "effector-react";
 import { $buttonWar, changeActiveButtons } from "@/stores/buttonWar/buttonWar";
 import { BUTTONS_COLUMNS_COUNT, BUTTONS_ROWS_COUNT } from "@/lib/constants";
-import Paragraph from "@/shared/Paragraph";
+import { ButtonWarTitle } from "./ButtonWarTitle";
 
 export const ButtonWar = () => {
   const { activeButtons } = useUnit($buttonWar);
 
   return (
     <ButtonWarWrapper>
-      <TitleWrapper>
-        <Paragraph text="Кнопочная битва" weight={900} size={48} />
-        <StyledInfoIcon />
-      </TitleWrapper>
+      <ButtonWarTitle />
 
       <ButtonsWrapper>
-        {/* <ButtonsRowsWrapper> */}
         {Array(BUTTONS_ROWS_COUNT)
           .fill(null)
           .map((_, rowIdx) => {
@@ -40,9 +29,7 @@ export const ButtonWar = () => {
                   />
                 );
               });
-            // return <ButtonsColumnsWrapper></ButtonsColumnsWrapper>;
           })}
-        {/* </ButtonsRowsWrapper> */}
       </ButtonsWrapper>
     </ButtonWarWrapper>
   );

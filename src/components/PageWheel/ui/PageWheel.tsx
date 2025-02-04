@@ -51,6 +51,7 @@ export const PageWheel: FC<IProps> = ({ pages }) => {
         return (
           <Page
             {...page}
+            key={page?.id}
             index={index}
             currentPage={currentPage}
             onTransitionEnd={() => changePageWheel({ isAnimating: false })}
