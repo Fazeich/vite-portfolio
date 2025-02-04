@@ -1,3 +1,4 @@
+import { ButtonWar } from "@/components/ButtonWar/ui/ButtonWar";
 import { Introduce } from "@/components/Introduce/ui/Introduce";
 import { TPage } from "@/components/PageWheel/lib/types";
 import Welcome from "@/components/Welcome";
@@ -16,9 +17,9 @@ export const getPages = () => {
       children: <Introduce />,
     },
     {
-      settings: { background: "#aaaaaa" },
+      settings: { background: "#ededed" },
       id: uniqueId(),
-      children: <div>3</div>,
+      children: <ButtonWar />,
     },
   ];
 
