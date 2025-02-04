@@ -1,3 +1,4 @@
+import { Introduce } from "@/components/Introduce/ui/Introduce";
 import { TPage } from "@/components/PageWheel/lib/types";
 import Welcome from "@/components/Welcome";
 import { uniqueId } from "lodash";
@@ -12,7 +13,7 @@ export const getPages = () => {
     {
       settings: { background: "#cccccc" },
       id: uniqueId(),
-      children: <div>2</div>,
+      children: <Introduce />,
     },
     {
       settings: { background: "#aaaaaa" },

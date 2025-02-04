@@ -2,35 +2,32 @@ import Page from "@/shared/Page";
 import { FC, useEffect, useRef, useState } from "react";
 import { PageWheelWrapper } from "../lib/styles";
 import { TPage } from "../lib/types";
+import { $pageWheel, changePageWheel } from "@/stores/pageWheel/pageWheel";
+import { useUnit } from "effector-react";
+import { SCROLL_DELAY } from "@/lib/constants";
 
 interface IProps {
   pages: TPage[];
 }
 
 export const PageWheel: FC<IProps> = ({ pages }) => {
-  const [currentPage, setCurrentPage] = useState<number>(0);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
+  const { currentPage, isAnimating } = useUnit($pageWheel);
   const containerRef = useRef<HTMLDivElement>(null);
   const lastScrollTime = useRef(null);
-  const scrollDelay = 1250;
 
   const handleWheel = (e: WheelEvent) => {
     e.preventDefault();
 
     const now = Date.now();
 
-    if (now - lastScrollTime.current < scrollDelay || isAnimating) return;
+    if (now - lastScrollTime.current < SCROLL_DELAY || isAnimating) return;
 
     lastScrollTime.current = now;
 
     if (e.deltaY > 0 && currentPage < pages.length - 1) {
-      setIsAnimating(true);
-
-      setCurrentPage((prev) => prev + 1);
+      changePageWheel({ currentPage: currentPage + 1, isAnimating: true });
     } else if (e.deltaY < 0 && currentPage > 0) {
-      setIsAnimating(true);
-
-      setCurrentPage((prev) => prev - 1);
+      changePageWheel({ currentPage: currentPage - 1, isAnimating: false });
     }
   };
 
@@ -56,7 +53,7 @@ export const PageWheel: FC<IProps> = ({ pages }) => {
             {...page}
             index={index}
             currentPage={currentPage}
-            onTransitionEnd={() => setIsAnimating(false)}
+            onTransitionEnd={() => changePageWheel({ isAnimating: false })}
           />
         );
       })}
