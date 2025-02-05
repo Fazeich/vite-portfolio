@@ -10,18 +10,5 @@ export const StyledParagraph = styled.p<{
 
   font-weight: ${({ weight }) => `${weight}px`};
 
-  color: ${({ type }) => {
-    switch (type) {
-      case "primary":
-        return "#000000";
-      case "secondary":
-        return "#969696";
-      case "accent":
-        return "#17a2b8";
-      case "additional":
-        return "#ffffff";
-      default:
-        return "#000000";
-    }
-  }};
+  color: ${({ type, theme }) => (type ? theme[type].text : theme.primary.text)};
 `;

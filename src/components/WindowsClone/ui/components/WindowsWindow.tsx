@@ -1,10 +1,7 @@
 import { WindowsWindowWrapper } from "../../lib/styles";
 import { DesktopIcon } from "./DesktopIcon";
-import { Ban, Banana, Folder, NotebookText, Settings } from "lucide-react";
-import {
-  addTab,
-  changeWindowsCloneStore,
-} from "@/stores/windowsClone/windowsClone";
+import { Ban, Folder, NotebookText, Settings } from "lucide-react";
+import { addTab } from "@/stores/windowsClone/windowsClone";
 import { EWindowTabs, EWindowTabsNames } from "@/stores/windowsClone/types";
 
 export const WindowsWindow = () => {

@@ -4,6 +4,7 @@ import ButtonWar from "@/components/ButtonWar";
 import WindowsClone from "@/components/WindowsClone";
 import { TPage } from "@/components/PageWheel/lib/types";
 import { uniqueId } from "lodash";
+import Contacts from "@/components/Contacts";
 
 export const getPages = () => {
   const pages: TPage[] = [
@@ -26,6 +27,11 @@ export const getPages = () => {
       settings: { background: "#dddddd" },
       id: uniqueId(),
       children: <WindowsClone />,
+    },
+    {
+      settings: { background: "#eeeeee" },
+      id: uniqueId(),
+      children: <Contacts />,
     },
   ];
 

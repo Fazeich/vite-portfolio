@@ -14,6 +14,18 @@ export const StyledButton = styled.button<{
 
   border-radius: 8px;
 
+  transition: background-color 0.25s ease-in-out;
+
+  &:hover {
+    background-color: ${({ isActive }) => {
+      if (isActive) {
+        return "#17a2b8";
+      }
+
+      return "#dedede";
+    }};
+  }
+
   background-color: ${({ isActive }) => {
     if (isActive) {
       return "#17a2b8";

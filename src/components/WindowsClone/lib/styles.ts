@@ -12,10 +12,10 @@ export const WindowsCloneWrapper = styled.div`
 `;
 
 export const WindowsWindowWrapper = styled.div`
-  border: 1px solid black;
-
   width: 100%;
   height: 85%;
+
+  border-top: 2px solid #aaaaaa;
 
   padding: 20px;
 
@@ -146,7 +146,25 @@ export const StyledTab = styled.div<{ isActive?: boolean }>`
 export const CloseTabWrapper = styled.div`
   border-radius: 50%;
 
+  width: 15px;
+  height: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
+`;
+
+export const LinkWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+`;
+
+export const ActiveContentWrapper = styled.div`
+  padding: 0.5rem;
 `;

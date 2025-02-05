@@ -24,6 +24,7 @@ import {
   X,
 } from "lucide-react";
 import Paragraph from "@/shared/Paragraph";
+import { WindowContent } from "./WindowContent";
 
 export const ActiveWindow = () => {
   const { tabs, activeTabId } = useUnit($windowsClone);
@@ -33,6 +34,7 @@ export const ActiveWindow = () => {
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
   const isActiveWindow = tabs.length > 0;
+  const activeTab = tabs.find((tab) => tab.id === activeTabId);
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     if ((e.target as HTMLElement).closest(".window-controls")) {
@@ -118,6 +120,8 @@ export const ActiveWindow = () => {
           );
         })}
       </TabsWrapper>
+
+      <WindowContent activeTab={activeTab} />
     </ActiveWindowWrapper>
   );
 };
