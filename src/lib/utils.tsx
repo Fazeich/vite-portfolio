@@ -5,6 +5,7 @@ import WindowsClone from "@/components/WindowsClone";
 import { TPage } from "@/components/PageWheel/lib/types";
 import { uniqueId } from "lodash";
 import Contacts from "@/components/Contacts";
+import Adaptive from "@/components/Adaptive";
 
 export const getPages = () => {
   const pages: TPage[] = [
@@ -14,19 +15,24 @@ export const getPages = () => {
       children: <Welcome />,
     },
     {
-      settings: { background: "#cccccc" },
+      settings: { background: "#eeeeee" },
       id: uniqueId(),
       children: <Introduce />,
     },
     {
-      settings: { background: "#eeeeee" },
+      settings: { background: "#dddddd" },
       id: uniqueId(),
       children: <ButtonWar />,
     },
     {
-      settings: { background: "#dddddd" },
+      settings: { background: "#eeeeee" },
       id: uniqueId(),
       children: <WindowsClone />,
+    },
+    {
+      settings: { background: "#dddddd" },
+      id: uniqueId(),
+      children: <Adaptive />,
     },
     {
       settings: { background: "#eeeeee" },

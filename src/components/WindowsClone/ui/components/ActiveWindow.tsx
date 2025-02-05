@@ -37,10 +37,6 @@ export const ActiveWindow = () => {
   const activeTab = tabs.find((tab) => tab.id === activeTabId);
 
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    if ((e.target as HTMLElement).closest(".window-controls")) {
-      return;
-    }
-
     setIsDragging(true);
 
     setDragStart({

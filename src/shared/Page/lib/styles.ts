@@ -6,7 +6,7 @@ export const PageWrapper = styled.div<{ index: number; currentPage: number }>`
 
   position: fixed;
 
-  transition: all 1s ease-in-out;
+  transition: transform 1s ease-in-out;
 
   transform: ${({ index, currentPage }) => {
     if (index > currentPage) {

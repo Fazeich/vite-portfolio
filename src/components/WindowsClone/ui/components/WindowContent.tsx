@@ -15,7 +15,11 @@ export const WindowContent: FC<IProps> = ({ activeTab }) => {
         return (
           <LinkWrapper>
             <Paragraph text="Если ты всё ещё здесь, то можешь заглянуть на мой" />
-            <Link text="ТГ канал" href="https://t.me/sou1_c0de" />
+            <Link
+              text="ТГ канал"
+              href="https://t.me/sou1_c0de"
+              target="_blank"
+            />
             <Paragraph text=":)" />
           </LinkWrapper>
         );
