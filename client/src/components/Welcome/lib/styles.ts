@@ -11,9 +11,22 @@ export const WelcomeWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  gap: 20px;
+  gap: 35px;
 
   text-align: center;
+
+  .smooth_text {
+    @keyframes smooth {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    animation: smooth 3s normal;
+  }
 `;
 
 export const BouncingArrow = styled(ChevronDown)`
@@ -29,7 +42,7 @@ export const BouncingArrow = styled(ChevronDown)`
   @keyframes bounce {
     0%,
     100% {
-      transform: translateY(-25%);
+      transform: translateY(-40%);
       animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
     }
     50% {

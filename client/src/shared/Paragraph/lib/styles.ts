@@ -8,7 +8,7 @@ export const StyledParagraph = styled.p<{
 }>`
   font-size: ${({ size }) => `${size}px`};
 
-  font-weight: ${({ weight }) => `${weight}px`};
+  font-weight: ${({ weight }) => weight};
 
   color: ${({ type, theme }) => (type ? theme[type].text : theme.primary.text)};
 `;

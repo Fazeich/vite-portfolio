@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "tsx index.ts",
+    "dev": "tsx watch index.ts 8787"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.10.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/mongoose": "^5.11.96",
+    "@types/ws": "^8.5.14",
+    "tsx": "^4.19.1",
+    "typescript": "^5.7.3"
+  }
+}

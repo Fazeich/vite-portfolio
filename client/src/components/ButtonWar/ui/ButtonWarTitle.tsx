@@ -16,7 +16,7 @@ export const ButtonWarTitle = () => {
               type="additional"
             />
             <Paragraph
-              text="Это означает, что если Вы кликните на кнопку то изменения увидят все сразу же"
+              text="При любом изменении это сразу увидят все пользователи"
               type="additional"
             />
           </StyledTooltipWrapper>

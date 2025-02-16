@@ -13,4 +13,17 @@ export const IntroduceWrapper = styled.div`
   text-align: center;
 
   gap: 30px;
+
+  .smooth_text {
+    @keyframes smooth {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    animation: smooth 3s normal;
+  }
 `;

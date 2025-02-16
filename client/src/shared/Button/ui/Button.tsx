@@ -1,7 +1,8 @@
-import React, { FC, HTMLAttributes } from "react";
+import React, { FC } from "react";
 import { StyledButton } from "../lib/styles";
+import { ButtonProps } from "antd";
 
-interface IProps extends HTMLAttributes<HTMLButtonElement> {
+interface IProps extends ButtonProps {
   width?: number;
   height?: number;
   isActive?: boolean;

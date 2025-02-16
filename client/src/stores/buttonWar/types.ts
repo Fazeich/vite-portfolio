@@ -1,3 +1,10 @@
 export interface IButtonWarStore {
-  activeButtons: boolean[][];
+  activeButtons: TActiveButtons;
+}
+
+export type TActiveButtons = boolean[][];
+
+export interface IChangeActiveButtonParams {
+  colIdx: number;
+  rowIdx: number;
 }

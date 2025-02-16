@@ -1,10 +1,16 @@
 import { BUTTONS_COLUMNS_COUNT, BUTTONS_ROWS_COUNT } from "@/lib/constants";
-import { createEvent, createStore } from "effector";
-import { IButtonWarStore } from "./types";
+import { createEffect, createEvent, createStore } from "effector";
+import {
+  IButtonWarStore,
+  IChangeActiveButtonParams,
+  TActiveButtons,
+} from "./types";
+import { ENDPOINTS } from "@/lib/endpoints";
+import axios from "axios";
 
 export const $buttonWar = createStore<IButtonWarStore>({
   activeButtons: Array(BUTTONS_ROWS_COUNT)
-    .fill(null)
+    .fill(false)
     .map(() => Array(BUTTONS_COLUMNS_COUNT).fill(false)),
 });
 
@@ -13,15 +19,34 @@ export const changeActiveButtons = createEvent<{
   colIdx: number;
 }>();
 
-$buttonWar.on(changeActiveButtons, (state, { rowIdx, colIdx }) => {
-  if (rowIdx >= 0 && colIdx >= 0) {
-    const newActiveButtons = state.activeButtons.map((r) => [...r]);
+export const setActiveButtons = createEvent<TActiveButtons>();
 
-    newActiveButtons[rowIdx][colIdx] = !newActiveButtons[rowIdx][colIdx];
+export const fetchActiveButtons = createEffect({
+  handler: async () => {
+    try {
+      const { data } = await axios.get<{ data: TActiveButtons }>(
+        ENDPOINTS.buttonWar.get
+      );
 
+      return data?.data;
+    } catch (err) {
+      console.error(new Error(err));
+
+      return [];
+    }
+  },
+});
+
+$buttonWar
+  .on(setActiveButtons, (state, payload) => {
     return {
       ...state,
-      activeButtons: newActiveButtons,
+      activeButtons: payload,
     };
-  }
-});
+  })
+  .on(fetchActiveButtons.doneData, (state, payload) => {
+    return {
+      ...state,
+      activeButtons: payload,
+    };
+  });

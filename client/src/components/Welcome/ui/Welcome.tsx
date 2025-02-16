@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { BouncingArrow, WelcomeWrapper } from "../lib/styles";
 import Paragraph from "@/shared/Paragraph";
 import { useUnit } from "effector-react";
 import { $pageWheel, changePageWheel } from "@/stores/pageWheel/pageWheel";
+import { IS_MOBILE } from "@/lib/constants";
 
 export const Welcome = () => {
   const { isAnimating } = useUnit($pageWheel);
@@ -15,8 +16,14 @@ export const Welcome = () => {
 
   return (
     <WelcomeWrapper>
-      <Paragraph text="Привет!" size={56} weight={900} />
-      <Paragraph text="Давай познакомимся" size={36} />
+      <Paragraph
+        className="smooth_text"
+        text="Привет!"
+        style={{
+          fontSize: IS_MOBILE ? "15vw" : "10vw",
+        }}
+        weight={500}
+      />
 
       <BouncingArrow onClick={handleChangePage} />
     </WelcomeWrapper>

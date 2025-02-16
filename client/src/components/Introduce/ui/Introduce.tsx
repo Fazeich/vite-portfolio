@@ -4,13 +4,18 @@ import { IntroduceWrapper } from "../lib/styles";
 export const Introduce = () => {
   return (
     <IntroduceWrapper>
-      <Paragraph text="Меня зовут Самсонов Владислав" size={48} weight={900} />
-      <Paragraph text="Я - Frontend разработчик" size={36} weight={900} />
       <Paragraph
-        text="Ниже покажу какой :)"
+        className="smooth_text"
+        text="Меня зовут Самсонов Владислав"
+        size={48}
+        weight={800}
+      />
+
+      <Paragraph
+        className="smooth_text"
+        text="Я - Frontend разработчик"
         size={36}
-        weight={900}
-        type="secondary"
+        weight={500}
       />
     </IntroduceWrapper>
   );

@@ -10,32 +10,32 @@ import Adaptive from "@/components/Adaptive";
 export const getPages = () => {
   const pages: TPage[] = [
     {
-      settings: { background: "#dddddd" },
+      settings: { background: "#eeeeee" },
       id: uniqueId(),
       children: <Welcome />,
     },
     {
-      settings: { background: "#eeeeee" },
+      settings: { background: "#dedede" },
       id: uniqueId(),
       children: <Introduce />,
     },
     {
-      settings: { background: "#dddddd" },
+      settings: { background: "#eeeeee" },
       id: uniqueId(),
       children: <ButtonWar />,
     },
     {
-      settings: { background: "#eeeeee" },
+      settings: { background: "#dedede" },
       id: uniqueId(),
       children: <WindowsClone />,
     },
     {
-      settings: { background: "#dddddd" },
+      settings: { background: "#eeeeee" },
       id: uniqueId(),
       children: <Adaptive />,
     },
     {
-      settings: { background: "#eeeeee" },
+      settings: { background: "#dedede" },
       id: uniqueId(),
       children: <Contacts />,
     },

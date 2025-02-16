@@ -1,7 +1,7 @@
 {
   "ts-node": {
     "compilerOptions": {
-      "module": "ES2022"
+      "module": "CommonJS"
     }
   },
   "compilerOptions": {
@@ -9,17 +9,12 @@
     "module": "ESNext",
     "target": "ES5",
     "allowJs": true,
-    "baseUrl": "./src",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "strict": false,
-    "paths": {
-      "@/*": ["*"]
-    }
+    "strict": false
   },
-  "include": ["src", "public", "configs"],
   "exclude": ["node_modules"]
 }

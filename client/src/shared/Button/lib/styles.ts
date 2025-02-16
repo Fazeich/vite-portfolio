@@ -1,6 +1,8 @@
+import { Button } from "antd";
 import styled from "styled-components";
+import { inherits } from "util";
 
-export const StyledButton = styled.button<{
+export const StyledButton = styled(Button)<{
   width?: number;
   height?: number;
   isActive?: boolean;
@@ -14,21 +16,19 @@ export const StyledButton = styled.button<{
 
   border-radius: 8px;
 
-  transition: background-color 0.25s ease-in-out;
-
   &:hover {
     background-color: ${({ isActive }) => {
       if (isActive) {
         return "#17a2b8";
       }
 
-      return "#dedede";
-    }};
+      return "inherit";
+    }} !important;
   }
 
   background-color: ${({ isActive }) => {
     if (isActive) {
       return "#17a2b8";
     }
-  }};
+  }} !important;
 `;

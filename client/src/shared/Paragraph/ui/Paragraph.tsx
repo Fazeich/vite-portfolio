@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, HTMLAttributes } from "react";
 import { StyledParagraph } from "../lib/styles";
 import { TParagraphTypes } from "../lib/types";
 
-interface IProps {
+interface IProps extends Partial<HTMLAttributes<HTMLParagraphElement>> {
   text?: string;
   weight?: number;
   size?: number;

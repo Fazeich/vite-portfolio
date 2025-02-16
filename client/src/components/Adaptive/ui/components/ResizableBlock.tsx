@@ -37,6 +37,7 @@ export const ResizableBlock: FC<IProps> = ({ children }) => {
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
       >
         <Grip />
       </GripWrapper>

@@ -40,6 +40,8 @@ export const ButtonsWrapper = styled.div`
   grid-template-rows: repeat(${BUTTONS_ROWS_COUNT}, 1fr);
 
   grid-gap: 10px;
+
+  overflow: hidden;
 `;
 
 export const ButtonsRowsWrapper = styled.div`
