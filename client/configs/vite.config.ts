@@ -11,6 +11,7 @@ export default defineConfig({
       name: "vite-portfolio",
       entry: path.resolve(context, "src/main.tsx"),
     },
+    rollupOptions: { input: ["./index.html"] },
   },
   plugins: [react()],
   base: "",
