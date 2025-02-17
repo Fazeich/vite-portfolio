@@ -1,5 +1,6 @@
 {
   "name": "vite-portfolio",
+  "homepage": "https://fazeich.github.io/portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,13 +9,16 @@
     "dev": "vite --config configs/vite.config.ts",
     "build": "vite build --config configs/vite.config.ts",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "antd": "^5.23.3",
     "axios": "^1.7.9",
     "effector": "^23.3.0",
     "effector-react": "^23.3.0",
+    "gh-pages": "^6.3.0",
     "lucide-react": "^0.474.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

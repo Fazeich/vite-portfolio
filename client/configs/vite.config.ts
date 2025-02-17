@@ -6,12 +6,13 @@ import path from "path";
 export default defineConfig({
   build: {
     lib: {
-      name: "index",
+      name: "vite-portfolio",
       entry: path.resolve("./", "./src/main.tsx"),
     },
     rollupOptions: { input: ["./index.html"] },
   },
   plugins: [react()],
+  base: "/portfolio/",
   resolve: {
     alias: {
       "@": path.resolve("./", "./src"),
