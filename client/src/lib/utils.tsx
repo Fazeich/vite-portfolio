@@ -2,10 +2,11 @@ import Welcome from "@/components/Welcome";
 import Introduce from "@/components/Introduce";
 import ButtonWar from "@/components/ButtonWar";
 import WindowsClone from "@/components/WindowsClone";
-import { TPage } from "@/components/PageWheel/lib/types";
-import { uniqueId } from "lodash";
 import Contacts from "@/components/Contacts";
 import Adaptive from "@/components/Adaptive";
+
+import { TPage } from "@/components/PageWheel/lib/types";
+import { uniqueId } from "lodash";
 
 export const getPages = () => {
   const pages: TPage[] = [

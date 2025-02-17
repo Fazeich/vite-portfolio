@@ -6,12 +6,11 @@
   "main": "main.tsx",
   "scripts": {
     "dev": "vite --config configs/vite.config.ts",
-    "build": "vite build",
+    "build": "vite build --config configs/vite.config.ts",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@types/axios": "^0.14.4",
     "antd": "^5.23.3",
     "axios": "^1.7.9",
     "effector": "^23.3.0",
@@ -24,6 +23,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
+    "@types/axios": "^0.14.4",
     "@types/lodash": "^4.17.15",
     "@types/node": "^22.13.0",
     "@types/react": "^18.3.18",
@@ -35,8 +35,7 @@
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
     "lodash": "^4.17.21",
-    "vite": "^6.0.5",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite": "^6.0.5"
   },
   "resolutions": {
     "styled-components": "^5"
