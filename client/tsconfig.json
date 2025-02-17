@@ -9,7 +9,7 @@
     "module": "ESNext",
     "target": "ES5",
     "allowJs": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
@@ -17,7 +17,7 @@
     "esModuleInterop": true,
     "strict": false,
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["src/*"]
     }
   },
   "include": ["src", "public", "configs"],
