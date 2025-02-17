@@ -25,4 +25,10 @@ export default defineConfig({
       },
     },
   },
+  define: {
+    process: {
+      env: {},
+      cwd: () => "/",
+    },
+  },
 });

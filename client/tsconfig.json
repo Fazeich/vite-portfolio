@@ -18,7 +18,8 @@
     "strict": false,
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["node"]
   },
   "include": ["src", "public", "configs"],
   "exclude": ["node_modules"]
