@@ -1,5 +1,3 @@
-import { notification } from "antd";
-
 export enum EConnectionEvent {
   ChangeBtn = "change-button",
 }
@@ -10,21 +8,7 @@ export interface IWsSend {
 }
 
 export const useWs = () => {
-  const ws = new WebSocket("ws://localhost:3010");
-
-  const [notif] = notification.useNotification();
-
-  ws.onopen = () => {
-    notif.success({ message: "Соединение установлено" });
-  };
-
-  ws.onclose = (e) => {
-    notif.success({ message: "Соединение закрыто" });
-  };
-
-  ws.onerror = () => {
-    notif.error({ message: "Соединение разорвано" });
-  };
+  const ws = new WebSocket("ws://samsonellium:3010");
 
   const wsSend = ({ data, event }: IWsSend) => {
     if (!ws.readyState) {
@@ -41,3 +25,9 @@ export const useWs = () => {
     wsSend,
   };
 };
+
+// ws.onopen = () => {};
+
+// ws.onclose = (e) => {};
+
+// ws.onerror = () => {};

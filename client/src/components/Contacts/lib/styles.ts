@@ -7,8 +7,12 @@ export const ContactsWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
+  text-align: center;
+
   align-items: center;
   justify-content: center;
+
+  background-color: ${({ theme }) => theme.accent.background};
 
   gap: 20px;
 `;

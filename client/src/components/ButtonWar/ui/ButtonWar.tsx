@@ -1,6 +1,10 @@
 import { ButtonsWrapper, ButtonWarWrapper } from "../lib/styles";
 import Button from "@/shared/Button";
-import { BUTTONS_COLUMNS_COUNT, BUTTONS_ROWS_COUNT } from "@/lib/constants";
+import {
+  BUTTONS_COLUMNS_COUNT,
+  BUTTONS_ROWS_COUNT,
+  IS_MOBILE,
+} from "@/lib/constants";
 import { ButtonWarTitle } from "./ButtonWarTitle";
 import { EConnectionEvent, useWs } from "@/lib/api";
 import { useEffect, useLayoutEffect, useState } from "react";
@@ -12,6 +16,7 @@ import {
 import { useUnit } from "effector-react";
 import { IChangeActiveButtonParams } from "@/stores/buttonWar/types";
 import { Spin } from "antd";
+import InWorkMobile from "@/shared/InWorkMobile";
 
 export const ButtonWar = () => {
   const { activeButtons } = useUnit($buttonWar);
@@ -65,26 +70,30 @@ export const ButtonWar = () => {
     <ButtonWarWrapper>
       <ButtonWarTitle />
 
-      <ButtonsWrapper>
-        {Array(BUTTONS_ROWS_COUNT)
-          .fill(false)
-          .map((_, rowIdx) => {
-            return Array(BUTTONS_COLUMNS_COUNT)
-              .fill(false)
-              .map((_, colIdx) => {
-                return (
-                  <Button
-                    width={35}
-                    height={35}
-                    onClick={() => changeActiveButtons({ rowIdx, colIdx })}
-                    isActive={localActiveButtons[rowIdx][colIdx]}
-                    key={`${rowIdx}_${colIdx}`}
-                    disabled={isLoadingButton}
-                  />
-                );
-              });
-          })}
-      </ButtonsWrapper>
+      {IS_MOBILE ? (
+        <InWorkMobile />
+      ) : (
+        <ButtonsWrapper>
+          {Array(BUTTONS_ROWS_COUNT)
+            .fill(false)
+            .map((_, rowIdx) => {
+              return Array(BUTTONS_COLUMNS_COUNT)
+                .fill(false)
+                .map((_, colIdx) => {
+                  return (
+                    <Button
+                      width={35}
+                      height={35}
+                      onClick={() => changeActiveButtons({ rowIdx, colIdx })}
+                      isActive={localActiveButtons[rowIdx][colIdx]}
+                      key={`${rowIdx}_${colIdx}`}
+                      disabled={isLoadingButton}
+                    />
+                  );
+                });
+            })}
+        </ButtonsWrapper>
+      )}
     </ButtonWarWrapper>
   );
 };

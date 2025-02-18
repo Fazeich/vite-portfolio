@@ -21,3 +21,8 @@ export const StyledInfoIcon = styled(Info)`
     color: #17a2b8;
   }
 `;
+
+export const PageWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+`;

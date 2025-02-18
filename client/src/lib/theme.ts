@@ -14,22 +14,22 @@ export interface IThemeSection {
 export const LIGHT_THEME: ITheme = {
   primary: {
     text: "#000000",
-    background: "",
-    link: "",
+    background: "#eeeeee",
+    link: "#969696",
   },
   secondary: {
     text: "#969696",
-    background: "",
+    background: "#cccccc",
     link: "",
   },
   accent: {
     text: "#17a2b8",
-    background: "",
+    background: "#ffffff",
     link: "",
   },
   additional: {
     text: "#ffffff",
-    background: "",
+    background: "#000000",
     link: "",
   },
 };

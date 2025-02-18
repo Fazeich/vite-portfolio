@@ -11,9 +11,13 @@ export const AdaptiveWrapper = styled.div`
   flex-direction: column;
 
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
-  gap: 1rem;
+  text-align: center;
+
+  gap: 50px;
+
+  background-color: ${({ theme }) => theme.accent.background};
 
   user-select: none;
 `;

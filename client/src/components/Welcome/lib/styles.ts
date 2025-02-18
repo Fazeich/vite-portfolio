@@ -2,8 +2,8 @@ import { ChevronDown } from "lucide-react";
 import styled from "styled-components";
 
 export const WelcomeWrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -14,6 +14,8 @@ export const WelcomeWrapper = styled.div`
   gap: 35px;
 
   text-align: center;
+
+  background-color: ${({ theme }) => theme.primary.background};
 
   .smooth_text {
     @keyframes smooth {
@@ -30,7 +32,7 @@ export const WelcomeWrapper = styled.div`
 `;
 
 export const BouncingArrow = styled(ChevronDown)`
-  position: fixed;
+  position: absolute;
 
   bottom: 15px;
 
