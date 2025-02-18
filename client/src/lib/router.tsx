@@ -11,18 +11,18 @@ export const PAGES: IPage[] = [
     id: uniqueId(),
     component: <Main />,
     name: "Главная",
-    link: "",
+    link: "/",
   },
   {
     id: uniqueId(),
     component: <Interactive />,
     name: "Интерактивность",
-    link: "interactive",
+    link: "/interactive",
   },
   {
     id: uniqueId(),
     component: <Landings />,
     name: "Ленденги",
-    link: "landings",
+    link: "/landings",
   },
 ];

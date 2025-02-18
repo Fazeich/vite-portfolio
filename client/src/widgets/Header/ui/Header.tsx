@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HeaderWrapper, NavLink } from "../lib/styles";
 import { PAGES } from "@/lib/router";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { BASE_ROUTE, IS_MOBILE } from "@/lib/constants";
 
 export const Header = () => {
   const navigate = useNavigate();
+  const currentRoute = useLocation()?.pathname?.replace(BASE_ROUTE, "");
 
   const lastScrollPos = useRef(window.scrollY);
   const isCooldown = useRef(false);
@@ -46,9 +47,11 @@ export const Header = () => {
     <HeaderWrapper isVisibleHeader={isVisibleHeader}>
       {PAGES.map((page) => (
         <NavLink
+          key={page.id}
           text={page.name}
           onClick={() => navigate(`${BASE_ROUTE}${page.link}`)}
           size={24}
+          active={Boolean(currentRoute === page.link)}
         />
       ))}
     </HeaderWrapper>

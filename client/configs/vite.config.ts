@@ -12,7 +12,7 @@ export default defineConfig({
     rollupOptions: { input: ["./index.html"] },
   },
   plugins: [react()],
-  base: "/portfolio/",
+  base: "/portfolio",
   resolve: {
     alias: {
       "@": path.resolve("./", "./src"),

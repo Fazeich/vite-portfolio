@@ -28,11 +28,14 @@ export const HeaderWrapper = styled.div<{ isVisibleHeader: boolean }>`
   gap: 10px;
 `;
 
-export const NavLink = styled(Paragraph)`
+export const NavLink = styled(Paragraph)<{ active: boolean }>`
   cursor: pointer;
 
   height: fit-content;
   width: fit-content;
+
+  color: ${({ active, theme }) =>
+    active ? theme.primary.link : theme.primary.text};
 
   &:hover {
     color: ${({ theme }) => theme.primary.link};
