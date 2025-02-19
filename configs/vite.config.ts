@@ -6,13 +6,20 @@ import path from "path";
 export default defineConfig({
   build: {
     lib: {
-      name: "vite-portfolio",
+      name: "portfolio",
+      fileName: "portfolio",
+      formats: ["iife"],
       entry: path.resolve("./", "./src/main.tsx"),
     },
-    rollupOptions: { input: ["./index.html"] },
+    rollupOptions: {
+      input: {
+        "index.html": "index.html",
+      },
+    },
   },
   plugins: [react()],
   base: "/portfolio",
+
   resolve: {
     alias: {
       "@": path.resolve("./", "./src"),
