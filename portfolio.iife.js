@@ -547,6 +547,8 @@ function print() { __p += __j.call(arguments, '') }
 `,zb=Dn.div`
   width: 100vw;
   height: 100vh;
+
+  overflow-x: hidden;
 `,s$=()=>Le.jsxs(zb,{children:[Le.jsx(u$,{}),Le.jsx(BP,{}),Le.jsx(UP,{})]}),c$=Dn.div`
   width: 100%;
   height: 100%;
