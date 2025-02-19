@@ -1,10 +1,6 @@
 import { BUTTONS_COLUMNS_COUNT, BUTTONS_ROWS_COUNT } from "@/lib/constants";
 import { createEffect, createEvent, createStore } from "effector";
-import {
-  IButtonWarStore,
-  IChangeActiveButtonParams,
-  TActiveButtons,
-} from "./types";
+import { IButtonWarStore, TActiveButtons } from "./types";
 import { ENDPOINTS } from "@/lib/endpoints";
 import axios from "axios";
 

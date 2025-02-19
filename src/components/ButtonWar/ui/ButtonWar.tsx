@@ -34,7 +34,7 @@ export const ButtonWar = () => {
     setLocalActiveButtons((prev) => {
       const newActiveButtons = prev?.map((arr) => [...arr]);
 
-      newActiveButtons[rowIdx][colIdx] = !newActiveButtons[rowIdx][colIdx];
+      newActiveButtons[rowIdx][colIdx] = !newActiveButtons?.[rowIdx]?.[colIdx];
 
       return newActiveButtons;
     });
@@ -75,11 +75,11 @@ export const ButtonWar = () => {
       ) : (
         <ButtonsWrapper>
           {Array(BUTTONS_ROWS_COUNT)
-            .fill(false)
-            .map((_, rowIdx) => {
+            ?.fill(false)
+            ?.map((_, rowIdx) => {
               return Array(BUTTONS_COLUMNS_COUNT)
-                .fill(false)
-                .map((_, colIdx) => {
+                ?.fill(false)
+                ?.map((_, colIdx) => {
                   return (
                     <Button
                       width={35}
