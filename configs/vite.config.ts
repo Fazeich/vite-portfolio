@@ -12,9 +12,7 @@ export default defineConfig({
       entry: path.resolve("./", "./src/main.tsx"),
     },
     rollupOptions: {
-      input: {
-        "index.html": "index.html",
-      },
+      input: ["index.html"],
     },
   },
   plugins: [react()],

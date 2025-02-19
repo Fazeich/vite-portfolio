@@ -85,7 +85,7 @@ export const ButtonWar = () => {
                       width={35}
                       height={35}
                       onClick={() => changeActiveButtons({ rowIdx, colIdx })}
-                      isActive={localActiveButtons[rowIdx][colIdx]}
+                      isActive={localActiveButtons?.[rowIdx]?.[colIdx]}
                       key={`${rowIdx}_${colIdx}`}
                       disabled={isLoadingButton}
                     />

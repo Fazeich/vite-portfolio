@@ -8,7 +8,13 @@ export interface IWsSend {
 }
 
 export const useWs = () => {
-  const ws = new WebSocket("ws://samsonellium:3010");
+  const ws = new WebSocket("wss://81.177.223.127:3010");
+
+  ws.onopen = () => {};
+
+  ws.onclose = (e) => {};
+
+  ws.onerror = () => {};
 
   const wsSend = ({ data, event }: IWsSend) => {
     if (!ws.readyState) {
@@ -25,9 +31,3 @@ export const useWs = () => {
     wsSend,
   };
 };
-
-// ws.onopen = () => {};
-
-// ws.onclose = (e) => {};
-
-// ws.onerror = () => {};

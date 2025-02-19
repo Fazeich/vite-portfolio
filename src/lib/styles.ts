@@ -25,4 +25,6 @@ export const StyledInfoIcon = styled(Info)`
 export const PageWrapper = styled.div`
   width: 100vw;
   height: 100vh;
+
+  overflow-x: hidden;
 `;
