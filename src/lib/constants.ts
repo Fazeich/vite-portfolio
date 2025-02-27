@@ -14,3 +14,5 @@ export const NEW_BASE_URL = "https://samsonellium.ru:3010";
 export const BASE_ROUTE = "/portfolio";
 
 export const HEADER_HEIGHT = 75;
+
+export const GRID_SIZE = 20;
