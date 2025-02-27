@@ -2,8 +2,8 @@ import Paragraph from "@/shared/Paragraph";
 import styled from "styled-components";
 
 export const AdaptiveWrapper = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: calc(100vh - 75px);
 
   padding: 1rem;
 

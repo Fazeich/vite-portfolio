@@ -1,7 +1,7 @@
-import { StyledTooltipWrapper } from "@/components/ButtonWar/lib/styles";
 import { StyledInfoIcon, TitleWrapper } from "@/lib/styles";
 import Paragraph from "@/shared/Paragraph";
 import { Tooltip } from "antd";
+import { StyledTooltipWrapper } from "../../lib/styles";
 
 export const WindowsCloneTitle = () => {
   return (

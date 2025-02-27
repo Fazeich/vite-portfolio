@@ -1,11 +1,10 @@
+import { HEADER_HEIGHT } from "@/lib/constants";
 import Paragraph from "@/shared/Paragraph";
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div<{ isVisibleHeader: boolean }>`
   width: 100%;
-  height: 75px;
-
-  overflow-x: auto;
+  height: ${HEADER_HEIGHT}px;
 
   transition: transform 0.25s ease-in-out;
 

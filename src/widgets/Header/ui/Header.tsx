@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { HeaderWrapper, NavLink } from "../lib/styles";
 import { PAGES } from "@/lib/router";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { BASE_ROUTE, IS_MOBILE } from "@/lib/constants";
 
 export const Header = () => {
@@ -19,15 +19,15 @@ export const Header = () => {
     lastScrollPos.current = currentScrollPos;
   };
 
-  const handleScroll = (e: Event) => {
+  const handleScroll = () => {
     const currentScrollPos = window.scrollY;
 
     if (!isCooldown.current) {
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         handleChangeHeaderVisibility(currentScrollPos);
 
         isCooldown.current = false;
-      }, 150);
+      });
 
       isCooldown.current = true;
     }
@@ -35,13 +35,13 @@ export const Header = () => {
 
   useEffect(() => {
     if (!IS_MOBILE) {
-      document.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll);
 
       return () => {
-        document.removeEventListener("scroll", handleScroll);
+        window.removeEventListener("scroll", handleScroll);
       };
     }
-  }, []);
+  }, [IS_MOBILE]);
 
   return (
     <HeaderWrapper isVisibleHeader={isVisibleHeader}>

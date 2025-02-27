@@ -8,18 +8,18 @@
   "scripts": {
     "dev": "vite --config configs/vite.config.ts",
     "build": "vite build --config configs/vite.config.ts",
-    "lint": "eslint .",
+    "lint": "eslint -c configs/eslint.config.ts --fix",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@types/react-router-dom": "^5.3.3",
     "antd": "^5.23.3",
     "axios": "^1.7.9",
     "effector": "^23.3.0",
     "effector-react": "^23.3.0",
     "gh-pages": "^6.3.0",
+    "jiti": "^2.4.2",
     "lucide-react": "^0.474.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -28,19 +28,22 @@
     "styled-components": "^6.1.14"
   },
   "devDependencies": {
-    "@eslint/js": "^9.17.0",
+    "@eslint/js": "^9.21.0",
     "@types/axios": "^0.14.4",
     "@types/lodash": "^4.17.15",
     "@types/node": "^22.13.0",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
+    "@types/react-router-dom": "^5.3.3",
     "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.17.0",
-    "eslint-plugin-react": "^7.37.2",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
-    "globals": "^15.14.0",
+    "globals": "^16.0.0",
     "lodash": "^4.17.21",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.25.0",
     "vite": "^6.0.5"
   },
   "resolutions": {

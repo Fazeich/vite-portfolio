@@ -1,3 +1,4 @@
+import { IS_MOBILE } from "@/lib/constants";
 import { Info } from "lucide-react";
 import styled from "styled-components";
 
@@ -23,8 +24,15 @@ export const StyledInfoIcon = styled(Info)`
 `;
 
 export const PageWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+
+  margin-top: ${() => {
+    if (IS_MOBILE) {
+      return 0;
+    }
+
+    return "75px";
+  }};
 
   overflow-x: hidden;
 `;

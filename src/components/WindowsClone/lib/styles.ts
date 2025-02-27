@@ -2,15 +2,13 @@ import styled from "styled-components";
 
 export const WindowsCloneWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
 
   align-items: center;
   justify-content: center;
-
-  text-align: center;
 
   gap: 50px;
 
@@ -173,4 +171,16 @@ export const LinkWrapper = styled.div`
 
 export const ActiveContentWrapper = styled.div`
   padding: 0.5rem;
+
+  max-width: 600px;
+`;
+
+export const StyledTooltipWrapper = styled.div`
+  text-align: center;
+`;
+
+export const WindowWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 `;

@@ -1,7 +1,7 @@
-import { AnchorHTMLAttributes, FC, HTMLAttributes } from "react";
+import { AnchorHTMLAttributes, FC } from "react";
 import { StyledLink } from "../lib/styles";
 
-interface IProps extends AnchorHTMLAttributes<any> {
+interface IProps extends AnchorHTMLAttributes<{}> {
   text: string;
   size?: number;
   weight?: number;

@@ -1,6 +1,5 @@
 import { Button } from "antd";
 import styled from "styled-components";
-import { inherits } from "util";
 
 export const StyledButton = styled(Button)<{
   width?: number;
